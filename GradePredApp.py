@@ -62,13 +62,13 @@ if st.button("Predict 11th & 12th Marks"):
     st.info(f"Model RMSE on Train Data: {rmse:.2f}")
     st.info(f"Model MAE on Train Data: {mae:.2f}")
 
-    # SHAP Explainability
-    st.subheader("🔍 Feature Importance using SHAP")
-    explainer = shap.Explainer(model, X_train)
-    shap_values = explainer(input_df)
+    # # SHAP Explainability
+    # st.subheader("🔍 Feature Importance using SHAP")
+    # explainer = shap.Explainer(model, X_train)
+    # shap_values = explainer(input_df)
 
-    fig, ax = plt.subplots(figsize=(10, 5))
-    shap.plots.waterfall(shap_values[0], max_display=10, show=False)
-    st.pyplot(fig)
+    # fig, ax = plt.subplots(figsize=(10, 5))
+    # shap.plots.waterfall(shap_values[0], max_display=10, show=False)
+    # st.pyplot(fig)
 
-    st.caption("This SHAP plot shows how each input feature contributed to the predictions.")
+    # st.caption("This SHAP plot shows how each input feature contributed to the predictions.")
