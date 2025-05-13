@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 # Load model and sample training data for SHAP (assume saved during training phase)
-model = joblib.load("best_model.pkl")
+model = joblib.load("best_model_.pkl")
 X_train = pd.read_csv("train_features.csv")
 y_train = pd.read_csv("train_targets.csv")
 
@@ -20,7 +20,7 @@ st.title("Student Grade Predictor (11th & 12th)")
 st.sidebar.header("Student Profile")
 name = st.sidebar.text_input("Student Name")
 gender = st.sidebar.selectbox("Gender", ["Male", "Female"])
-effort = st.sidebar.selectbox("Effort", ["Low", "Middle", "High"])
+effort = st.sidebar.selectbox("Effort", ["Low", "Medium", "High"])
 
 grades_input = {}
 with st.expander("Enter Grades from 6th to 10th", expanded=True):
@@ -38,7 +38,7 @@ if st.button("Predict 11th & 12th Marks"):
     input_df['Gender_Female'] = 1 if gender == 'Female' else 0
     input_df['Gender_Male'] = 1 if gender == 'Male' else 0
     input_df['Effort_Low'] = 1 if effort == 'Low' else 0
-    input_df['Effort_Middle'] = 1 if effort == 'Middle' else 0
+    input_df['Effort_Medium'] = 1 if effort == 'Medium' else 0
     input_df['Effort_High'] = 1 if effort == 'High' else 0
 
     # Ensure same column order
