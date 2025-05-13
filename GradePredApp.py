@@ -14,7 +14,7 @@ X_train = pd.read_csv("train_features.csv")
 y_train = pd.read_csv("train_targets.csv")
 
 st.set_page_config(page_title="Student Grade Predictor by Anish S", layout="wide")
-st.title("Student Grade Predictor (11th & 12th)")
+st.title("Student Grade Predictor (11th & 12th) by Anish S")
 
 # Input Form
 st.sidebar.header("Student Profile")
