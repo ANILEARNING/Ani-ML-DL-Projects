@@ -55,7 +55,9 @@ if st.button("📈 Predict 11th & 12th Marks"):
 
     # Model Evaluation on training data (optional)
     y_pred = model.predict(X_train)
-    rmse = mean_squared_error(y_train, y_pred, squared=False)
+    # rmse = mean_squared_error(y_train, y_pred, squared=False)
+    rmse = np.sqrt(mean_squared_error(y_train, y_pred))  # Manual RMSE
+
     mae = mean_absolute_error(y_train, y_pred)
     st.info(f"Model RMSE on Train Data: {rmse:.2f}")
     st.info(f"Model MAE on Train Data: {mae:.2f}")
