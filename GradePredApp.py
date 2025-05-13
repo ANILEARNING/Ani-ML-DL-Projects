@@ -13,7 +13,7 @@ model = joblib.load("best_model_.pkl")
 X_train = pd.read_csv("train_features.csv")
 y_train = pd.read_csv("train_targets.csv")
 
-st.set_page_config(page_title="Student Grade Predictor", layout="wide")
+st.set_page_config(page_title="Student Grade Predictor by Anish S", layout="wide")
 st.title("Student Grade Predictor (11th & 12th)")
 
 # Input Form
