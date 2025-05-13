@@ -1,6 +1,8 @@
 streamlit
-shap
-joblib
-matplotlib
-scikit-learn
 pandas
+numpy
+scikit-learn
+joblib
+shap
+matplotlib
+optuna
