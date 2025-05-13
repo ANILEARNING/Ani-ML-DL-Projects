@@ -37,9 +37,9 @@ if st.button("Predict 11th & 12th Marks"):
     # Add encoded categorical variables
     input_df['Gender_Female'] = 1 if gender == 'Female' else 0
     input_df['Gender_Male'] = 1 if gender == 'Male' else 0
-    input_df['Effort_Low'] = 1 if effort == 'Low' else 0
-    input_df['Effort_Middle'] = 1 if effort == 'Middle' else 0
-    input_df['Effort_High'] = 1 if effort == 'High' else 0
+    input_df['Socioeconomic_Status_Low'] = 1 if effort == 'Low' else 0
+    input_df['Socioeconomic_Status_Middle'] = 1 if effort == 'Middle' else 0
+    input_df['Socioeconomic_Status_High'] = 1 if effort == 'High' else 0
 
     # Ensure same column order
     input_df = input_df[X_train.columns]
