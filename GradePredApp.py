@@ -14,16 +14,16 @@ X_train = pd.read_csv("train_features.csv")
 y_train = pd.read_csv("train_targets.csv")
 
 st.set_page_config(page_title="Student Grade Predictor", layout="wide")
-st.title("📊 Student Grade Predictor (11th & 12th)")
+st.title("Student Grade Predictor (11th & 12th)")
 
 # Input Form
 st.sidebar.header("Student Profile")
 name = st.sidebar.text_input("Student Name")
 gender = st.sidebar.selectbox("Gender", ["Male", "Female"])
-socio = st.sidebar.selectbox("Socioeconomic Status", ["Low", "Middle", "High"])
+effort = st.sidebar.selectbox("Effort", ["Low", "Middle", "High"])
 
 grades_input = {}
-with st.expander("📚 Enter Grades from 6th to 10th", expanded=True):
+with st.expander("Enter Grades from 6th to 10th", expanded=True):
     for grade in [6, 7, 8, 9, 10]:
         st.subheader(f"Grade {grade} Marks")
         for subject in ['Math', 'English', 'Science', 'History', 'Computer']:
@@ -31,15 +31,15 @@ with st.expander("📚 Enter Grades from 6th to 10th", expanded=True):
             grades_input[key] = st.slider(f"{subject} (Grade {grade})", 0, 100, 75)
 
 # Predict
-if st.button("📈 Predict 11th & 12th Marks"):
+if st.button("Predict 11th & 12th Marks"):
     input_df = pd.DataFrame([grades_input])
 
     # Add encoded categorical variables
     input_df['Gender_Female'] = 1 if gender == 'Female' else 0
     input_df['Gender_Male'] = 1 if gender == 'Male' else 0
-    input_df['Socioeconomic_Status_Low'] = 1 if socio == 'Low' else 0
-    input_df['Socioeconomic_Status_Middle'] = 1 if socio == 'Middle' else 0
-    input_df['Socioeconomic_Status_High'] = 1 if socio == 'High' else 0
+    input_df['Effort_Low'] = 1 if effort == 'Low' else 0
+    input_df['Effort_Middle'] = 1 if effort == 'Middle' else 0
+    input_df['Effort_High'] = 1 if effort == 'High' else 0
 
     # Ensure same column order
     input_df = input_df[X_train.columns]
